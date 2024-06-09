@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Companies from "./components/Companies.jsx";
 import Services from "./components/Services.jsx";
+import Footer from './components/Footer.jsx';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 				<Companies />
 				<Services />
 			</div>
+			<Footer/>
 		</div>
 
 	)
