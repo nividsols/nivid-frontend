@@ -6,7 +6,7 @@ import img_4 from '../assets/img_4.png';
 import img_5 from '../assets/img_5.png';
 const Companies = () => {
 	return (
-		<div className='flex items-center justify-between my-20 px-28'>
+		<div className='flex items-center justify-between py-16 2xl:px-[20%] lg:px-24'>
 			<img src={img_1} className='w-40 h-fit'/>
 			<img src={img_2} className='w-40 h-fit'/>
 			<img src={img_3} className='w-40 h-fit'/>
