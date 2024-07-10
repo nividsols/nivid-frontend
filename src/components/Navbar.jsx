@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,39 +12,63 @@ const Navbar = () => {
   return (
     <nav className="flex w-screen justify-between items-center fixed top-0 bg-gradient-to-r from-[#60BBEE] via-[#0775B4] to-[#0A72AD] bg-opacity-90 p-4 z-50 lg:px-64">
       <div className="text-white text-3xl font-bold ml-4">
-        <h1>Nivid</h1>
+        <Link to="/">Nivid</Link>
       </div>
 
       <ul className="hidden md:flex justify-around items-center space-x-32 text-white text-lg mr-4">
         <li>
-          <a href="#home" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#home"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             Home
-          </a>
+          </HashLink>
         </li>
         <li>
-          <a href="#services" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#services"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             Services
-          </a>
+          </HashLink>
         </li>
         <li>
-          <a href="#about" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#about"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             About Us
-          </a>
+          </HashLink>
         </li>
         <li>
-          <a href="#articles" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#articles"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             Articles
-          </a>
+          </HashLink>
         </li>
         <li>
-          <a href="#portfolio" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#portfolio"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             Portfolio
-          </a>
+          </HashLink>
         </li>
         <li>
-          <a href="#contact" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+          <HashLink
+            smooth
+            to="/#contact"
+            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+          >
             Contact
-          </a>
+          </HashLink>
         </li>
       </ul>
 
@@ -67,23 +93,41 @@ const Navbar = () => {
 
       {isOpen && (
         <ul className="md:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-[#60BBEE] via-[#0775B4] to-[#0A72AD] flex flex-col items-center space-y-4 py-4 text-white">
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#home">Home</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#home">Home</HashLink>
           </li>
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#services">Services</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#services">Services</HashLink>
           </li>
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#about">About Us</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#about">About Us</HashLink>
           </li>
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#articles">Articles</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#articles">Articles</HashLink>
           </li>
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#portfolio">Portfolio</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#portfolio">Portfolio</HashLink>
           </li>
-          <li className="hover:text-gray-400 cursor-pointer" onClick={toggleMenu}>
-            <a href="#contact">Contact</a>
+          <li
+            className="hover:text-gray-400 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <HashLink smooth to="/#contact">Contact</HashLink>
           </li>
         </ul>
       )}
