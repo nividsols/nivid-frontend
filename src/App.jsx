@@ -4,6 +4,7 @@ import Hero from "./components/Hero.jsx";
 import Companies from "./components/Companies.jsx";
 import Services from "./components/Services.jsx";
 import Footer from "./components/Footer.jsx";
+import ContactUs from "./components/ContactUs.jsx";
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
           <Services />
         </div>
       </div>
-      <Footer />
+      <div className="relative bg-[#F6F6F6] pt-96 mt-[32rem] md:mt-[20rem]">
+        <ContactUs />
+        <Footer />
+      </div>
     </div>
   );
 }
