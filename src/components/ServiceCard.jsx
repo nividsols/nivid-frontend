@@ -1,8 +1,11 @@
+import React from "react";
 
-
-const ServiceCard = ({ img, title, description }) => {
+const ServiceCard = ({ img, title, description, onClick }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div
+      className="bg-white shadow-md rounded-lg overflow-hidden hover:scale-105 cursor-pointer transition-transform duration-300"
+      onClick={onClick}
+    >
       <div className="p-3">
         <img src={img} alt={title} className="rounded-lg w-full h-auto" />
       </div>
