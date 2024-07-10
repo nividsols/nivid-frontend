@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
@@ -7,17 +8,13 @@ import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
-    <div>
-      <div className="bg-gradient-to-r from-[#60BBEE] via-[#0775B4] to-[#0A72AD] pb-16 w-screen ">
-        <Navbar />
+    <div className="bg-gradient-to-r from-[#60BBEE] via-[#0775B4] to-[#0A72AD] min-h-screen">
+      <Navbar />
+      <div className="pt-16">
         <Hero />
       </div>
-      <div>
-        <Companies />
-        <div>
-          <Services />
-        </div>
-      </div>
+      <Companies />
+      <Services />
       <Footer />
     </div>
   );
