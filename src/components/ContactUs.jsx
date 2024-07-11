@@ -20,9 +20,10 @@ const ContactUs = () => {
     console.log(formData)
   };
   // absolute bottom-[36rem] md:bottom-80
+  // bg-[#F6F6F6] relative pt-96 mt-32rem md:mt-[16rem] absolute bottom-2
   return (
-    <div className="w-full flex justify-center bg-[#F6F6F6] relative pt-96 mt-32rem md:mt-[16rem]">
-      <div className="flex flex-col md:flex-row justify-center items-center md:gap-16 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] p-8 min-w-[80%] shadow-lg absolute bottom-2">
+    <div className="w-full flex justify-center my-16">
+      <div className="flex flex-col md:flex-row justify-center items-center md:gap-16 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] p-8 min-w-[80%] shadow-lg ">
         <div className="bg-white p-6 pb-8  shadow-lg max-w-xs mb-6 md:mb-0 md:mr-6 flex flex-col items-center relative mt-8">
           <div className="shadow-lg bg-white text-[#0775B4] rounded-full h-20 w-20 flex justify-center items-center mr-2 absolute top-[-2.5rem]">
 

@@ -29,7 +29,6 @@ function App() {
               <Companies />
               <Services />
               <AboutUs />
-              <ContactUs />
             </Layout>
           }
         />
@@ -38,6 +37,14 @@ function App() {
           element={
             <Layout>
               <ServiceDetail />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact-us"
+          element={
+            <Layout>
+              <ContactUs/>
             </Layout>
           }
         />
