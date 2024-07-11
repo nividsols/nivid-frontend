@@ -8,6 +8,8 @@ import ServiceDetail from "./pages/ServiceDetail.jsx";
 import Footer from "./components/Footer.jsx";
 import AboutUs from "./components/AboutUs.jsx";
 import ContactUs from "./components/ContactUs.jsx";
+import CaseStudies from "./components/CaseStudies.jsx";
+import CaseStudyDetails from "./pages/CaseStudyDetails.jsx";
 
 const Layout = ({ children }) => (
   <div className=" w-screen min-h-screen">
@@ -29,6 +31,7 @@ function App() {
               <Companies />
               <Services />
               <AboutUs />
+              <CaseStudies/>
             </Layout>
           }
         />
@@ -37,6 +40,14 @@ function App() {
           element={
             <Layout>
               <ServiceDetail />
+            </Layout>
+          }
+        />
+        <Route
+          path="/case-study-detail/:id"
+          element={
+            <Layout>
+              <CaseStudyDetails/>
             </Layout>
           }
         />
