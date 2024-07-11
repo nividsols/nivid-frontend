@@ -23,11 +23,11 @@ const Hero = () => {
           Discover More
         </a>
       </div>
-      <div className="w-full lg:w-[30rem] 2xl:w-auto mt-8 lg:mt-0">
+      <div className="w-full lg:w-[30rem] 2xl:w-auto mt-8 lg:mt-0 2xl:px-36">
         <img
           src={SVG}
           alt="Innovative Solutions"
-          className="opacity-90 rounded-2xl mx-auto 2xl:mx-36"
+          className="opacity-90 rounded-2xl mx-auto "
         />
       </div>
     </section>

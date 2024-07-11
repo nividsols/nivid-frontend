@@ -9,7 +9,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="flex w-screen justify-between items-center fixed top-0 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] bg-opacity-90 p-4 z-50 md:px-16  2xl:px-64 space-x-8">
+    <nav className="flex w-screen justify-between items-center fixed top-0 bg-[#0775B4]  bg-opacity-90 p-4 z-50 md:px-16  2xl:px-64 space-x-8">
       <div className="text-white text-3xl font-bold ml-4">
         <Link to="/">Nivid</Link>
       </div>
