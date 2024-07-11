@@ -8,9 +8,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
-    <nav className="flex w-screen justify-between items-center fixed top-0 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] bg-opacity-90 p-4 z-50 lg:px-64">
+    <nav className="flex w-full justify-between bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] shadow-xl  items-center fixed top-0  bg-opacity-90 p-4 z-50 lg:px-64">
       <div className="text-white text-3xl font-bold ml-4">
         <Link to="/">Nivid</Link>
       </div>
@@ -64,10 +63,10 @@ const Navbar = () => {
         <li>
           <HashLink
             smooth
-            to="/#contact"
+            to="/contact-us"
             className="text-[#C4C4C4] hover:text-white cursor-pointer"
           >
-            Contact
+            Contact Us
           </HashLink>
         </li>
       </ul>
@@ -127,7 +126,7 @@ const Navbar = () => {
             className="hover:text-gray-400 cursor-pointer"
             onClick={toggleMenu}
           >
-            <HashLink smooth to="/#contact">Contact</HashLink>
+            <HashLink smooth to="/contact-us">Contact Us</HashLink>
           </li>
         </ul>
       )}
