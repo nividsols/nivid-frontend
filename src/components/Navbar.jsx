@@ -9,12 +9,12 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="flex w-full justify-between bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] shadow-xl  items-center fixed top-0  bg-opacity-90 p-4 z-50 lg:px-64">
+    <nav className="flex w-screen justify-between items-center fixed top-0 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] bg-opacity-90 p-4 z-50 md:px-16  2xl:px-64 space-x-8">
       <div className="text-white text-3xl font-bold ml-4">
         <Link to="/">Nivid</Link>
       </div>
 
-      <ul className="hidden md:flex justify-around items-center space-x-32 text-white text-lg mr-4">
+      <ul className="hidden md:flex justify-around items-center space-x-8 md:space-x-16  lg:space-x-32 text-white text-lg mr-4">
         <li>
           <HashLink
             smooth
