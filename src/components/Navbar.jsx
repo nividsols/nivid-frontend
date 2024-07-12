@@ -1,29 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import IOT from "../assets/IOT_image.png";
-import Data from "../assets/data.png";
-import Manufacture from "../assets/manufacture.png";
+import axios from "axios";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [serviceData, setServiceData] = useState([]);
   const navigate = useNavigate();
 
-  const serviceData = [
-    {
-      img: IOT,
-      title: "IIoT & Digital Engineering",
-    },
-    {
-      img: Data,
-      title: "Data Analytics",
-    },
-    {
-      img: Manufacture,
-      title: "Manufacturing Solutions",
-    },
-  ];
+  useEffect(() => {
+    axios.get("http://localhost:8000/apis/services/")
+      .then((response) => {
+        setServiceData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching service data:", error);
+      });
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -34,7 +28,7 @@ const Navbar = () => {
   };
 
   const handleCardClick = (service) => {
-    navigate(`/service-detail/${encodeURIComponent(service.title)}`, { state: { service } });
+    navigate(`/service-detail/${encodeURIComponent(service.name)}`, { state: { service } });
     setIsDropdownOpen(false);
   };
 
@@ -68,13 +62,13 @@ const Navbar = () => {
           </div>
           {isDropdownOpen && (
             <ul className="absolute left-0 mt-2 w-48 bg-[#0775B4] text-white rounded-lg shadow-lg">
-              {serviceData.map((service, index) => (
+              {serviceData.map((service) => (
                 <li
-                  key={index}
+                  key={service.id}
                   className="hover:bg-white hover:text-black p-2 cursor-pointer"
                   onClick={() => handleCardClick(service)}
                 >
-                  {service.title}
+                  {service.name}
                 </li>
               ))}
             </ul>

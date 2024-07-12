@@ -1,64 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
-import IOT from "../assets/IOT_image.png";
-import Data from "../assets/data.png";
-import Manufacture from "../assets/manufacture.png";
 
 const Services = () => {
-  const serviceData = [
-    {
-      img: IOT,
-      title: "IIoT & Digital Engineering",
-      description:
-        "Our offerings under the umbrella of IIoT & Digital Engineering are as below",
-      services: `Manufacturing Operations Management
-- Digital twin
-- Digital thread
-- Process / Machine Integration
-- Process Automation
-- AI/ML based Non-Conformance Management
-- Automated Visual Inspection
-- Inspector / Operator Training Management
-- Asset Management`,
-    },
-    {
-      img: Data,
-      title: "Data Analytics",
-      description: `Using PowerBI, Python, Tableau & IBM Cognos (SSBI) We provide below Data Analysis & Visualisation modules to manufacturing Facilities`,
-      services: `Yield & Throughput Dashboard
-- SPC Dashboard
-- RFT (Part & Feature) Dashboard
-- Calibration (Machine/Inspection Equipment/Tools & Fixture) Monitoring
-- HS&E Dashboard
-- Training Management Dashboard
-- Machine Health Check Dashboard
-- Predictive & Preventive Analysis
-- KPV & KPI Dashboard
-- PO Status Dashboard
-- Supplier Quality Dashboard
-- Other custom dashboards to suit your business`,
-    },
-    {
-      img: Manufacture,
-      title: "Manufacturing Solutions",
-      description: "Our Manufacturing & design support offerings are -",
-      services: `APQP, PPAP & FAIr
-- Quality Support
-- Non-Conformance Management
-- Change Control Management
-- Supply Chain Management
-- Inspection Support
-- Process optimisation
-- Zero defects
-- Manufacturing Instructions`,
-    },
-  ];
-
+  const [serviceData, setServiceData] = useState([]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    axios.get("http://localhost:8000/apis/services/")
+      .then((response) => {
+        setServiceData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching service data:", error);
+      });
+  }, []);
+
   const handleCardClick = (service) => {
-    navigate(`service-detail/${service.title}`, { state: { service } });
+    navigate(`service-detail/${service.name}`, { state: { service } });
   };
 
   return (
@@ -76,12 +36,12 @@ const Services = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {serviceData.map((service, index) => (
+        {serviceData.map((service) => (
           <ServiceCard
-            key={index}
-            img={service.img}
-            title={service.title}
-            description={service.description}
+            key={service.id}
+            img={service.image_url}
+            title={service.name}
+            description={service.details}
             onClick={() => handleCardClick(service)}
           />
         ))}
