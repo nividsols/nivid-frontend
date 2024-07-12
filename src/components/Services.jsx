@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Services = () => {
   const [serviceData, setServiceData] = useState([]);
@@ -21,6 +24,32 @@ const Services = () => {
     navigate(`service-detail/${service.name}`, { state: { service } });
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
   return (
     <section
       className="bg-[#F6F6F6] px-6 md:px-12 lg:px-24 2xl:px-[13%] py-12"
@@ -35,17 +64,17 @@ const Services = () => {
           manufacturing facilities
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Slider {...settings}>
         {serviceData.map((service) => (
-          <ServiceCard
-            key={service.id}
-            img={service.image_url}
-            title={service.name}
-            description={service.details}
-            onClick={() => handleCardClick(service)}
-          />
+          <div key={service.id} className="p-2">
+            <ServiceCard
+              img={service.image_url}
+              title={service.name}
+              onClick={() => handleCardClick(service)}
+            />
+          </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 };
