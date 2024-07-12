@@ -1,8 +1,9 @@
-import React from 'react';
-import Google from '../assets/footer/google.svg';
-import LinkedIn from '../assets/footer/LinkedIn.svg';
-import Insta from '../assets/footer/Insta.svg';
-import twitter from '../assets/footer/twitter.svg';
+import React from "react";
+import Google from "../assets/footer/google.svg";
+import LinkedIn from "../assets/footer/LinkedIn.svg";
+import Insta from "../assets/footer/Insta.svg";
+import twitter from "../assets/footer/twitter.svg";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -21,13 +22,13 @@ const Footer = () => {
               <img src={Google} alt="" />
             </a>
             <a href="#" className="text-blue-500">
-            <img src={twitter} alt="" />
+              <img src={twitter} alt="" />
             </a>
             <a href="#" className="text-blue-500">
-            <img src={Insta} alt="" />
+              <img src={Insta} alt="" />
             </a>
             <a href="#" className="text-blue-500">
-            <img src={LinkedIn} alt="" />
+              <img src={LinkedIn} alt="" />
             </a>
           </div>
         </div>
@@ -36,9 +37,13 @@ const Footer = () => {
             <h2 className="font-semibold">Company</h2>
             <ul className="mt-4 space-y-2">
               <li>
-                <a href="#" className="text-gray-600">
-                  About
-                </a>
+                <HashLink
+                  smooth
+                  to="/#about"
+                  className="text-gray-600 cursor-pointer"
+                >
+                  About Us
+                </HashLink>
               </li>
               <li>
                 <a href="#" className="text-gray-600">
