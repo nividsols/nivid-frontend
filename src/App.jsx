@@ -12,7 +12,7 @@ import CaseStudies from "./components/CaseStudies.jsx";
 import CaseStudyDetails from "./pages/CaseStudyDetails.jsx";
 
 const Layout = ({ children }) => (
-  <div className=" w-screen min-h-screen">
+  <div className=" min-h-screen">
     <Navbar />
     <div className="pt-16">{children}</div>
       <Footer />
