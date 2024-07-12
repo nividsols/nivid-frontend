@@ -1,11 +1,23 @@
-import React from "react";
+import { separateDateComponents } from "../utils/separateDateComponent";
 
-const CaseStudyCard = ({ img, title, description, onClick }) => {
+
+const CaseStudyCard = ({ img, title, date, description, onClick }) => {
+  const {day,month,year} = separateDateComponents(date);
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer" onClick={onClick}>
-      <img src={img} alt={title} className="w-full h-48 object-fill" />
+    <div
+      className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
+      onClick={onClick}
+    >
+      <img src={img} alt={title} className="w-full h-64 object-fill" />
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <div className="flex mb-4">
+          <div className="flex flex-col text-xl font-extrabold mr-4">
+            <span>{day}</span>
+            <span>{month}</span>
+            {/* <span>{day}</span> */}
+          </div>
+          <h3 className="text-xl font-bold mb-2 flex items-center ">{title}</h3>
+        </div>
         <p className="text-gray-600">{description}</p>
       </div>
     </div>

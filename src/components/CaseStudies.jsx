@@ -43,6 +43,7 @@ const CaseStudies = () => {
               key={index}
               img={caseStudy.image_url}
               title={caseStudy.name}
+              date={caseStudy.date}
               description={caseStudy.details}
               onClick={() => handleCardClick(caseStudy.id)}
             />

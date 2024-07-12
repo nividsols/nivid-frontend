@@ -40,7 +40,7 @@ const ContactUs = () => {
       setStatus("FAILED");
     }
   };
-
+  window.scrollTo(0, 0)
   return (
     <div className="w-full flex justify-center my-16">
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-16 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] p-8 min-w-[80%] shadow-lg ">
