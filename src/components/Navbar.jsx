@@ -71,7 +71,7 @@ const Navbar = () => {
               {serviceData.map((service, index) => (
                 <li
                   key={index}
-                  className="hover:bg-[#54bcf9] p-2 cursor-pointer"
+                  className="hover:bg-white hover:text-black p-2 cursor-pointer"
                   onClick={() => handleCardClick(service)}
                 >
                   {service.title}
