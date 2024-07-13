@@ -30,7 +30,7 @@ const CaseStudyDetails = () => {
     return <div>Error loading case study details.</div>;
   }
 
-
+  window.scrollTo(0, 0)
   return (
     <section className="bg-white px-6 md:px-12 lg:px-24 2xl:px-[20%] py-20">
       <div className="max-w-4xl mx-auto">
