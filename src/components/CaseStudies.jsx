@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CaseStudyCard from "./CaseStudyCard";
 import axios from "axios";
+import image from "../assets/data.png"
 
 const CaseStudies = () => {
   const [caseStudyData, setCaseStudyData] = useState([]);
@@ -23,20 +24,21 @@ const CaseStudies = () => {
   }, []);
 
   const handleCardClick = async (caseStudyId) => {
-      navigate(`case-study-detail/${caseStudyId}`);
+    navigate(`case-study-detail/${caseStudyId}`);
   };
 
   return (
     <section
-      className=" px-6 md:px-12 lg:px-24 2xl:px-[13%] py-10"
+      className="px-6 md:px-12 lg:px-24 2xl:px-[13%] py-10 w-full"
       id="case-studies"
     >
       <div className="flex flex-col lg:flex-row justify-between items-center md:pb-12">
-        <h1 className=" text-4xl md:text-5xl w-full leading-relaxed font-semibold mb-8 lg:mb-0">
+        <h1 className="text-4xl md:text-5xl w-full leading-relaxed font-semibold mb-8 lg:mb-0">
           Our Case Studies
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* w-1/5 h-full */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 scroll-smooth ">
         {caseStudyData.length > 0 &&
           caseStudyData.map((caseStudy, index) => (
             <CaseStudyCard
@@ -46,6 +48,7 @@ const CaseStudies = () => {
               date={caseStudy.date}
               description={caseStudy.details}
               onClick={() => handleCardClick(caseStudy.id)}
+              fixedWidth={true} // Add a prop to indicate fixed width
             />
           ))}
       </div>
