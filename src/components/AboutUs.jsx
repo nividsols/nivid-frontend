@@ -4,7 +4,7 @@ import AboutusImg from "../assets/aboutus.png";
 const AboutUs = () => {
   return (
     <section
-      className="bg-white py-12 px-6 md:px-12 lg:px-24 w-full"
+      className="bg-white py-12 px-6 md:px-12 lg:px-24 w-full my-24"
       id="about"
     >
       <div className="mx-auto flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-24 2xl:px-[10%]">

@@ -5,7 +5,6 @@ import axios from "axios";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [serviceData, setServiceData] = useState([]);
   const navigate = useNavigate();
 
@@ -23,13 +22,8 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   const handleCardClick = (service) => {
     navigate(`/service-detail/${encodeURIComponent(service.name)}`, { state: { service } });
-    setIsDropdownOpen(false);
   };
 
   return (
@@ -44,11 +38,8 @@ const Navbar = () => {
             Home
           </HashLink>
         </li>
-        <li className="relative">
-          <div
-            onClick={toggleDropdown}
-            className="text-[#C4C4C4] hover:text-white cursor-pointer flex items-center"
-          >
+        <li className="relative group">
+          <div className="text-[#C4C4C4] hover:text-white cursor-pointer flex items-center">
             Services
             <svg
               className="ml-2 h-4 w-4"
@@ -60,19 +51,17 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
-          {isDropdownOpen && (
-            <ul className="absolute left-0 mt-2 w-48 bg-[#0775B4] text-white rounded-lg shadow-lg">
-              {serviceData.map((service) => (
-                <li
-                  key={service.id}
-                  className="hover:bg-white hover:text-black p-2 cursor-pointer"
-                  onClick={() => handleCardClick(service)}
-                >
-                  {service.name}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul className="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:mt-4 transition-all duration-300">
+            {serviceData.map((service) => (
+              <li
+                key={service.id}
+                className="hover:bg-gray-100 hover:text-black p-2 cursor-pointer"
+                onClick={() => handleCardClick(service)}
+              >
+                {service.name}
+              </li>
+            ))}
+          </ul>
         </li>
         <li>
           <HashLink smooth to="/#about" className="text-[#C4C4C4] hover:text-white cursor-pointer">
