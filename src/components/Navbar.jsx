@@ -46,9 +46,8 @@ const Navbar = () => {
   };
 
   const handleCaseStudyCardClick = (study) => {
-    navigate(`case-study-detail/${encodeURIComponent(study)}`, {
-      state: { service },
-    });
+    console.log("id",study)
+    navigate(`/case-study-detail/${study}`);
   };
 
   return (
@@ -91,7 +90,7 @@ const Navbar = () => {
               />
             </svg>
           </HashLink>
-          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300">
+          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
             {serviceData.map((service) => (
               <li
                 key={service.id}
@@ -134,7 +133,7 @@ const Navbar = () => {
               />
             </svg>
           </HashLink>
-          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300">
+          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
             {caseStudyData.map((casestudy) => (
               <li
                 key={casestudy.id}
