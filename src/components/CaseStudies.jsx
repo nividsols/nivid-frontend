@@ -37,8 +37,7 @@ const CaseStudies = () => {
           Our Case Studies
         </h1>
       </div>
-      {/* w-1/5 h-full */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 scroll-smooth ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {caseStudyData.length > 0 &&
           caseStudyData.map((caseStudy, index) => (
             <CaseStudyCard
@@ -48,7 +47,7 @@ const CaseStudies = () => {
               date={caseStudy.date}
               description={caseStudy.details}
               onClick={() => handleCardClick(caseStudy.id)}
-              fixedWidth={true} // Add a prop to indicate fixed width
+              fixedWidth={true} 
             />
           ))}
       </div>
@@ -57,3 +56,4 @@ const CaseStudies = () => {
 };
 
 export default CaseStudies;
+
