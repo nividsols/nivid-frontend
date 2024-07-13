@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className="flex w-[100%] justify-between items-center fixed top-0 bg-[#0775B4] bg-opacity-90 p-4 z-50 md:px-16 2xl:px-64">
       <div className="text-white text-3xl font-bold">
-        <Link to="/">Nivid</Link>
+        <HashLink smooth to="/#home">Nivid</HashLink>
       </div>
 
       <ul className="hidden md:flex justify-around items-center space-x-8 md:space-x-16 lg:space-x-32 text-white text-lg">
@@ -39,8 +39,8 @@ const Navbar = () => {
           </HashLink>
         </li>
         <li className="relative group">
-          <div className="text-[#C4C4C4] hover:text-white cursor-pointer flex items-center">
-            Services
+          <HashLink smooth to="/#services" className="text-[#C4C4C4] hover:text-white cursor-pointer flex items-center">
+            <span className="services-link">Services</span>
             <svg
               className="ml-2 h-4 w-4"
               fill="none"
@@ -50,14 +50,10 @@ const Navbar = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </div>
-          <ul className="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:mt-4 transition-all duration-300">
+          </HashLink>
+          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300">
             {serviceData.map((service) => (
-              <li
-                key={service.id}
-                className="hover:bg-gray-100 hover:text-black p-2 cursor-pointer"
-                onClick={() => handleCardClick(service)}
-              >
+              <li key={service.id} className="hover:bg-gray-200 cursor-pointer p-2" onClick={() => handleCardClick(service)}>
                 {service.name}
               </li>
             ))}
@@ -69,13 +65,8 @@ const Navbar = () => {
           </HashLink>
         </li>
         <li>
-          <HashLink smooth to="/#articles" className="text-[#C4C4C4] hover:text-white cursor-pointer">
-            Articles
-          </HashLink>
-        </li>
-        <li>
-          <HashLink smooth to="/#portfolio" className="text-[#C4C4C4] hover:text-white cursor-pointer">
-            Portfolio
+          <HashLink smooth to="/#case-studies" className="text-[#C4C4C4] hover:text-white cursor-pointer">
+            Case Studies
           </HashLink>
         </li>
         <li>
