@@ -27,7 +27,7 @@ const Footer = () => {
             <a href="#" className="text-blue-500">
               <img src={Insta} alt="" />
             </a>
-            <a href="#" className="text-blue-500">
+            <a href="https://www.linkedin.com/company/nivid-innovative-solutions-ltd/" className="text-blue-500">
               <img src={LinkedIn} alt="" />
             </a>
           </div>

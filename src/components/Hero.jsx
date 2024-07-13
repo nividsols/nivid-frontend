@@ -1,10 +1,9 @@
-import React from "react";
 import SVG from "../assets/img.png";
 
 const Hero = () => {
   return (
     <section
-      className="bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD]  flex  flex-col lg:flex-row justify-between items-center py-10 lg:py-20 px-6 md:px-12 lg:px-24 2xl:px-[10%] lg:gap-x-16 2xl:gap-x-60"
+      className="bg-gradient-to-l mt-1 from-[#60BBEE] via-[#0775B4] to-[#0A72AD]  flex  flex-col lg:flex-row justify-between items-center py-10 lg:py-20 px-6 md:px-12 lg:px-24 2xl:px-[10%] lg:gap-x-16 2xl:gap-x-60"
       id="home"
     >
       <div className="w-full lg:w-1/2 text-center lg:text-left">

@@ -4,7 +4,8 @@ import { useLocation } from "react-router-dom";
 const ServiceDetail = () => {
   const location = useLocation();
   const { service } = location.state;
-
+  window.scrollTo(0, 0)
+  
   return (
     <section className="bg-white px-6 md:px-12 lg:px-24 2xl:px-[20%] py-8 lg:py-16 w-full flex justify-center my-4 lg:my-16">
       <div className="max-w-4xl mx-auto">

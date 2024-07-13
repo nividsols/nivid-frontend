@@ -5,7 +5,7 @@ const CaseStudyCard = ({ img, title, date, description, onClick }) => {
   const {day,month,year} = separateDateComponents(date);
   return (
     <div
-      className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
+      className="bg-white shadow-md drop-shadow-2xl rounded-lg overflow-hidden cursor-pointer w-[20rem]"
       onClick={onClick}
     >
       <img src={img} alt={title} className="w-full h-64 object-fill" />
