@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CaseStudyCard from "./CaseStudyCard";
 import axios from "axios";
-import image from "../assets/data.png"
 
 const CaseStudies = () => {
   const [caseStudyData, setCaseStudyData] = useState([]);
@@ -24,7 +23,9 @@ const CaseStudies = () => {
   }, []);
 
   const handleCardClick = async (caseStudyId) => {
-    navigate(`case-study-detail/${caseStudyId}`);
+    navigate(`case-study-detail/${caseStudyId.id}`, {
+      state: { name: caseStudyId.name },
+    });
   };
 
   return (
@@ -37,7 +38,10 @@ const CaseStudies = () => {
           Our Case Studies
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      <div
+        className="flex overflow-x-auto scrollbar-hide"
+        style={{ gap: "28px", padding: "16px 8px" }}
+      >
         {caseStudyData.length > 0 &&
           caseStudyData.map((caseStudy, index) => (
             <CaseStudyCard
@@ -46,8 +50,8 @@ const CaseStudies = () => {
               title={caseStudy.name}
               date={caseStudy.date}
               description={caseStudy.details}
-              onClick={() => handleCardClick(caseStudy.id)}
-              fixedWidth={true} 
+              onClick={() => handleCardClick(caseStudy)}
+              fixedWidth={true}
             />
           ))}
       </div>
@@ -56,4 +60,3 @@ const CaseStudies = () => {
 };
 
 export default CaseStudies;
-
