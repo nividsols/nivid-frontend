@@ -84,8 +84,8 @@ const CaseStudyDetails = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -93,7 +93,7 @@ const CaseStudyDetails = () => {
   return (
     <section className="bg-white px-6 md:px-12 lg:px-24 2xl:px-[20%] py-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-semibold mb-6 text-gray-800">{name}</h1>
+        <h1 className="text-4xl font-semibold mb-16 text-gray-800">{name}</h1>
         <Slider {...settings} className="mb-12 mt-2">
           {segments.map((segment) => (
             <div key={segment.id}>
@@ -101,7 +101,7 @@ const CaseStudyDetails = () => {
             </div>
           ))}
         </Slider>
-        <div className="text-gray-600">
+        <div className="text-gray-600 mt-16">
           {segments.map((segment) => (
             <div key={segment.id} className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">
