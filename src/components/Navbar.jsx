@@ -45,9 +45,8 @@ const Navbar = () => {
     });
   };
 
-  const handleCaseStudyCardClick = (study) => {
-    console.log("id",study)
-    navigate(`/case-study-detail/${study}`);
+  const handleCaseStudyCardClick = (caseStudyId) => {
+    navigate(`/case-study-detail/${caseStudyId.id}`,{ state: {name:caseStudyId.name} });
   };
 
   return (
@@ -138,7 +137,7 @@ const Navbar = () => {
               <li
                 key={casestudy.id}
                 className="hover:bg-gray-200 cursor-pointer p-2"
-                onClick={() => handleCaseStudyCardClick(casestudy.id)}
+                onClick={() => handleCaseStudyCardClick(casestudy)}
               >
                 {casestudy.name}
               </li>
