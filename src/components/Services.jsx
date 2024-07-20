@@ -5,32 +5,33 @@ import ServiceCard from "./ServiceCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const NextArrow = (props) => {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "black", borderRadius: "50%" }}
+      className="slick-arrow slick-next"
+      style={{ display: "block", background: "black", borderRadius: "50%" }}
       onClick={onClick}
-    />
+    >
+      <FaArrowRight style={{ color: "white", padding: "10px" }} />
+    </div>
   );
 };
 
 const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "black", borderRadius: "50%" }}
+      className="slick-arrow slick-prev"
+      style={{ display: "block", background: "black", borderRadius: "50%" }}
       onClick={onClick}
-    />
+    >
+      <FaArrowLeft style={{ color: "white", padding: "10px" }} />
+    </div>
   );
 };
-
-
-
 
 const Services = () => {
   const [serviceData, setServiceData] = useState([]);
@@ -56,8 +57,8 @@ const Services = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />, 
-    prevArrow: <PrevArrow />, 
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,

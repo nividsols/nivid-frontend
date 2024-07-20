@@ -11,6 +11,7 @@ import ContactUs from "./components/ContactUs.jsx";
 import CaseStudies from "./components/CaseStudies.jsx";
 import CaseStudyDetails from "./pages/CaseStudyDetails.jsx";
 
+
 const Layout = ({ children }) => (
   <div className=" min-h-screen">
     <Navbar />

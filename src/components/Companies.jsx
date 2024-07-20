@@ -18,16 +18,18 @@ const Companies = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-white">
-      <div className="flex flex-wrap justify-around items-center gap-8 px-6 lg:px-24 2xl:px-[20%]">
-        {companies.map((company, index) => (
-          <img
-            key={index}
-            src={company.image_url}
-            className="w-32 h-auto md:w-40"
-            alt={`Company ${index + 1}`}
-          />
-        ))}
+    <div className="py-16 bg-white overflow-hidden">
+      <div className="marquee">
+        <div className="marquee-content">
+          {companies.concat(companies).map((company, index) => (
+            <img
+              key={index}
+              src={company.image_url}
+              className="w-32 h-auto md:w-40"
+              alt={`Company ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

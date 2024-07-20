@@ -53,7 +53,7 @@ const Navbar = () => {
     <nav className="flex w-[100%] justify-between items-center fixed top-0 bg-[#0775B4] bg-opacity-90 p-4 z-50 md:px-16 2xl:px-64">
       <div className="text-white text-3xl font-bold">
         <HashLink smooth to="/#home">
-          Nivid
+          NIVID
         </HashLink>
       </div>
 
