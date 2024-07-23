@@ -136,7 +136,7 @@ const Navbar = () => {
             {caseStudyData.map((casestudy) => (
               <li
                 key={casestudy.id}
-                className="hover:bg-gray-200 cursor-pointer p-2"
+                className=" hover:bg-gray-200 cursor-pointer p-2"
                 onClick={() => handleCaseStudyCardClick(casestudy)}
               >
                 {casestudy.name}
