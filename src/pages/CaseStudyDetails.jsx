@@ -6,12 +6,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const NextArrow = (props) => {
-  const {onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className="absolute right-4 top-28 md:top-40 bg-[#fffffff9] rounded-full shadow-xl cursor-pointer z-10"
       onClick={onClick}
-      
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +19,12 @@ const NextArrow = (props) => {
         stroke="currentColor"
         className="w-8 h-8 text-[#0775B4]"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 5l7 7-7 7"
+        />
       </svg>
     </div>
   );
@@ -30,7 +34,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-       className="absolute left-4  top-28 md:top-40 bg-[#fffffff9] rounded-full shadow-xl cursor-pointer z-10"
+      className="absolute left-4  top-28 md:top-40 bg-[#fffffff9] rounded-full shadow-xl cursor-pointer z-10"
       onClick={onClick}
     >
       <svg
@@ -40,7 +44,12 @@ const PrevArrow = (props) => {
         stroke="currentColor"
         className="w-8 h-8 text-[#0775B4]"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 19l-7-7 7-7"
+        />
       </svg>
     </div>
   );
@@ -56,7 +65,9 @@ const CaseStudyDetails = () => {
   useEffect(() => {
     const fetchCaseStudyDetails = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/apis/case-studies/segments/${id}`);
+        const response = await axios.get(
+          `http://127.0.0.1:8000/apis/case-studies/segments/${id}`
+        );
         setSegments(response.data);
         setLoading(false);
       } catch (error) {
@@ -79,13 +90,13 @@ const CaseStudyDetails = () => {
   window.scrollTo(0, 0);
 
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -97,11 +108,25 @@ const CaseStudyDetails = () => {
         <Slider {...settings} className="mb-12 mt-2">
           {segments.map((segment) => (
             <div key={segment.id}>
-              <img src={segment.image_url} alt={segment.title} className="w-full h-[15rem] md:h-[22rem] rounded-lg" />
+              <img
+                src={segment.image_url}
+                alt={segment.title}
+                className="w-full h-[15rem] md:h-[22rem] rounded-lg"
+              />
+              <div className="text-gray-600 mt-16">
+                  <div key={segment.id} className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">
+                      {segment.title}
+                    </h2>
+                    <p className="text-lg mb-4 text-justify">
+                      {segment.content}
+                    </p>
+                  </div>
+              </div>
             </div>
           ))}
         </Slider>
-        <div className="text-gray-600 mt-16">
+        {/* <div className="text-gray-600 mt-16">
           {segments.map((segment) => (
             <div key={segment.id} className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">
@@ -112,7 +137,7 @@ const CaseStudyDetails = () => {
                 </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

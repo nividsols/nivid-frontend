@@ -10,13 +10,20 @@ const Footer = () => {
     <footer className="bg-gray-100 p-8 py-20 w-full">
       <div className="max-w-screen-xl mx-auto md:flex-row gap-16 flex justify-between flex-col">
         <div>
-          <h1 className="text-xl font-semibold">
-            Nivid Innovation Solution Limited
-          </h1>
-          <p className="text-gray-600 mt-2">
-            is a general contractor company based in Jakarta. More than 25 years
-            of experience in building and carving out Indonesia's development.
-          </p>
+          <h1 className="text-xl font-semibold">Nivid Innovative Solutions</h1>
+          <div className="text-gray-600 mt-2">
+            is a Engineering Solutions & Service company.
+            <br />
+            <p className="my-1 text-justify">
+              We Provide cost effective solutions & services in IoT & Digital
+              Engineering, Data Analysis & Visualisation, Manufacturing & Design
+              Support and 3D Metrology & Reverse Engineering to global
+              industrial OEM's & manufactures.
+            </p>
+        
+              Our domain expertise are Aviation, Automobile, Supply Chain, Medi
+              Tech & Edu Tech.
+          </div>
           <div className="flex space-x-4 mt-4">
             <a href="#" className="text-blue-500">
               <img src={Google} alt="" />
@@ -27,7 +34,10 @@ const Footer = () => {
             <a href="#" className="text-blue-500">
               <img src={Insta} alt="" />
             </a>
-            <a href="https://www.linkedin.com/company/nivid-innovative-solutions-ltd/" className="text-blue-500">
+            <a
+              href="https://www.linkedin.com/company/nivid-innovative-solutions-ltd/"
+              className="text-blue-500"
+            >
               <img src={LinkedIn} alt="" />
             </a>
           </div>
