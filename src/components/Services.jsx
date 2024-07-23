@@ -95,7 +95,7 @@ const Services = () => {
       </div>
       <Slider {...settings}>
         {serviceData.map((service) => (
-          <div key={service.id} className="p-2">
+          <div key={service.id} className="grid-cols-3 px-4">
             <ServiceCard
               img={service.image_url}
               title={service.name}
