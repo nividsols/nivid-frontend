@@ -82,7 +82,7 @@ const ServiceDetail = () => {
                   <img
                     src={subService.image_url}
                     alt={subService.title}
-                    className="h-12 w-12 rounded-full rotateImage"
+                    className="h-12 w-12 rounded-full p-1 rotateImage"
                   />
                   <h1 className="text-gray-800">{subService.title}</h1>
                 </div>

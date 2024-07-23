@@ -9,21 +9,10 @@
 }
 
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* Marquee container to ensure overflow is hidden */
 .marquee {
   display: flex;
-  /* overflow: hidden; */
-  flex-wrap: wrap;
+  overflow: hidden;
   position: relative;
   width: 100%;
   /* Add some vertical padding for better spacing */
@@ -32,22 +21,26 @@
 /* Marquee content to animate */
 .marquee-content {
   display: flex;
-  gap: 8rem;
-  /* Ensure at least 2rem gap between images */
-  animation: marquee 5s linear infinite;
-  /* Animate marquee */
+  gap: 2rem;
+  animation: marquee 30s linear infinite;
   width: 200%;
-  /* Extend width to 200% to allow for continuous scrolling */
   align-items: center;
-  /* Center items vertically */
 }
 
 /* Flexbox settings to ensure items are in a row */
 .marquee-content img {
-  flex: 0 0 auto;
+  flex: auto;
   width: auto;
   height: 5rem;
-  /* Ensure consistent height for images */
+  padding: 0 1rem;
   object-fit: contain;
-  /* Ensure images are not stretched */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

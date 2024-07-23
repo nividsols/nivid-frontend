@@ -81,7 +81,7 @@ const Services = () => {
 
   return (
     <section
-      className="bg-[#F6F6F6] px-6 md:px-12 lg:px-24 2xl:px-[13%] py-12"
+      className="bg-[#F6F6F6] px-6 md:px-12 lg:px-24 xl:px-36 py-12"
       id="services"
     >
       <div className="flex flex-col lg:flex-row justify-between items-center py-20">
