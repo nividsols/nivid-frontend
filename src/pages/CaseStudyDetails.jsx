@@ -66,7 +66,7 @@ const CaseStudyDetails = () => {
     const fetchCaseStudyDetails = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/apis/case-studies/segments/${id}`
+          `https://nivid-kb6d.onrender.com/apis/case-studies/segments/${id}`
         );
         setSegments(response.data);
         setLoading(false);

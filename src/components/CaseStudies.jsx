@@ -11,7 +11,7 @@ const CaseStudies = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/apis/case-studies/"
+          "https://nivid-kb6d.onrender.com/apis/case-studies/"
         );
         setCaseStudyData(response.data);
       } catch (error) {

@@ -38,7 +38,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8000/apis/services/")
+    axios.get("https://nivid-kb6d.onrender.com/apis/services/")
       .then((response) => {
         setServiceData(response.data);
       })

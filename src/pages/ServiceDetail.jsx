@@ -14,7 +14,7 @@ const ServiceDetail = () => {
     const getSubServices = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/apis/services/sub-services/${service.id}`
+          `https://nivid-kb6d.onrender.com/apis/services/sub-services/${service.id}`
         );
         setSubServices(response.data);
       } catch (error) {

@@ -8,7 +8,7 @@ const Companies = () => {
     const fetchCompanies = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/apis/companies/"
+          "https://nivid-kb6d.onrender.com/apis/companies/"
         );
         setCompanies(response.data);
       } catch (error) {
