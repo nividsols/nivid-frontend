@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CaseStudyCard from "./CaseStudyCard";
 import axios from "axios";
+import { BaseUrl } from "../BaseUrl";
 
 const CaseStudies = () => {
   const [caseStudyData, setCaseStudyData] = useState([]);
@@ -11,7 +12,7 @@ const CaseStudies = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://nivid-kb6d.onrender.com/apis/case-studies/"
+          `${BaseUrl}/apis/case-studies/`
         );
         setCaseStudyData(response.data);
       } catch (error) {

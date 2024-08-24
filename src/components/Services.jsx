@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { BaseUrl } from "../BaseUrl";
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -38,7 +39,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://nivid-kb6d.onrender.com/apis/services/")
+    axios.get(`${BaseUrl}/apis/services/`)
       .then((response) => {
         setServiceData(response.data);
       })

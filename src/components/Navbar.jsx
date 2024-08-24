@@ -1,52 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import axios from "axios";
+import { BaseUrl } from "../BaseUrl";
 
-const Navbar = () => {
+const Navbar = ({serviceData,caseStudyData}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [serviceData, setServiceData] = useState([]);
-  const [caseStudyData, setCaseStudyData] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://127.0.0.1:8000/apis/case-studies/"
-        );
-        setCaseStudyData(response.data);
-      } catch (error) {
-        console.error("Error fetching case studies:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/apis/services/")
-      .then((response) => {
-        setServiceData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching service data:", error);
-      });
-  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleCaseStudyCardClick = (caseStudyId) => {
+    navigate(`/case-study-detail/${caseStudyId.id}`,{ state: {name:caseStudyId.name} });
+  };
   const handleCardClick = (service) => {
     navigate(`/service-detail/${encodeURIComponent(service.name)}`, {
       state: { service },
     });
-  };
-
-  const handleCaseStudyCardClick = (caseStudyId) => {
-    navigate(`/case-study-detail/${caseStudyId.id}`,{ state: {name:caseStudyId.name} });
   };
 
   return (
@@ -89,8 +61,8 @@ const Navbar = () => {
               />
             </svg>
           </HashLink>
-          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
-            {serviceData.map((service) => (
+          <ul className="absolute left-0 pt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300 invisible">
+            {serviceData&&serviceData.map((service) => (
               <li
                 key={service.id}
                 className="hover:bg-gray-200 cursor-pointer p-2"
@@ -132,7 +104,7 @@ const Navbar = () => {
               />
             </svg>
           </HashLink>
-          <ul className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
+          <ul className="absolute left-0 pt-2 w-48 bg-white text-black shadow-lg rounded-lg opacity-0  group-hover:opacity-100 group-hover:visible  transition-opacity duration-300 invisible">
             {caseStudyData.map((casestudy) => (
               <li
                 key={casestudy.id}

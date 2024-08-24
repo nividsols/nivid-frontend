@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BaseUrl } from "../BaseUrl";
 
 const Companies = () => {
   const [companies, setCompanies] = useState([]);
@@ -8,7 +9,7 @@ const Companies = () => {
     const fetchCompanies = async () => {
       try {
         const response = await axios.get(
-          "https://nivid-kb6d.onrender.com/apis/companies/"
+          `${BaseUrl}/apis/companies/`
         );
         setCompanies(response.data);
       } catch (error) {

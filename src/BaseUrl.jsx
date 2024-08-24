@@ -1,0 +1,1 @@
+export const BaseUrl = "https://nivid-kb6d.onrender.com";

@@ -4,6 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { BaseUrl } from "../BaseUrl";
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -66,7 +67,7 @@ const CaseStudyDetails = () => {
     const fetchCaseStudyDetails = async () => {
       try {
         const response = await axios.get(
-          `https://nivid-kb6d.onrender.com/apis/case-studies/segments/${id}`
+          `${BaseUrl}/apis/case-studies/segments/${id}`
         );
         setSegments(response.data);
         setLoading(false);
@@ -114,30 +115,25 @@ const CaseStudyDetails = () => {
                 className="w-full h-[15rem] md:h-[22rem] rounded-lg"
               />
               <div className="text-gray-600 mt-16">
-                  <div key={segment.id} className="mb-8">
-                    <h2 className="text-2xl font-semibold mb-4">
-                      {segment.title}
-                    </h2>
-                    <p className="text-lg mb-4 text-justify">
-                      {segment.content}
-                    </p>
-                  </div>
+                <div key={segment.id} className="mb-8">
+                  <h2 className="text-2xl font-semibold mb-4">
+                    {segment.title}
+                  </h2>
+                  <p className="text-lg mb-4 text-justify">{segment.content}</p>
+                </div>
               </div>
             </div>
           ))}
         </Slider>
-        {/* <div className="text-gray-600 mt-16">
-          {segments.map((segment) => (
-            <div key={segment.id} className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">
-                {segment.title}
-                </h2>
-              <p className="text-lg mb-4 text-justify">
-                {segment.content}
-                </p>
-            </div>
-          ))}
-        </div> */}
+        <div className="text-gray-600 mt-16">
+          <div className="mb-8">
+            <img
+              src={segments[0].image_url}
+              alt={segments[0].title}
+              className="w-full h-[15rem] md:h-[22rem] rounded-lg"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

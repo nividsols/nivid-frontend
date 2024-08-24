@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { BaseUrl } from "../BaseUrl";
 
 const ServiceDetail = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ const ServiceDetail = () => {
     const getSubServices = async () => {
       try {
         const response = await axios.get(
-          `https://nivid-kb6d.onrender.com/apis/services/sub-services/${service.id}`
+          `${BaseUrl}/apis/services/sub-services/${service.id}`
         );
         setSubServices(response.data);
       } catch (error) {
@@ -34,6 +35,7 @@ const ServiceDetail = () => {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  window.scrollTo(0, 0);
 
   return (
     <section className="px-6 md:px-12 lg:px-24 2xl:px-[20%] py-8 lg:py-16 w-full flex justify-center">
