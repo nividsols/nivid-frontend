@@ -1,8 +1,6 @@
-import { separateDateComponents } from "../utils/separateDateComponent";
 import { truncateText } from "../utils/truncateText";
 
 const CaseStudyCard = ({ img, title, date, description, onClick }) => {
-  const { day, month, year } = separateDateComponents(date);
 
   return (
     <div
