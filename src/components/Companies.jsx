@@ -28,7 +28,7 @@ const Companies = () => {
             <img
               key={index}
               src={company.image_url}
-              className="w-32 h-auto md:w-40"
+              className="w-32 h-12 md:h-auto md:w-40"
               alt={`Company ${index + 1}`}
             />
           ))}

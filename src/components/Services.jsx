@@ -12,7 +12,7 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="slick-arrow slick-next"
+      className="slick-arrow slick-next mr-3"
       style={{ display: "block", background: "black", borderRadius: "50%" }}
       onClick={onClick}
     >
@@ -25,7 +25,7 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className="slick-arrow slick-prev"
+      className="slick-arrow slick-prev ml-3"
       style={{ display: "block", background: "black", borderRadius: "50%" }}
       onClick={onClick}
     >
