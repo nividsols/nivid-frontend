@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { BaseUrl } from "../BaseUrl";
 
 const ServiceDetail = () => {
   const location = useLocation();
@@ -15,7 +14,7 @@ const ServiceDetail = () => {
     const getSubServices = async () => {
       try {
         const response = await axios.get(
-          `${BaseUrl}/apis/services/sub-services/${service.id}`
+          `https://nivid-kb6d.onrender.com/apis/services/sub-services/${service.id}`
         );
         setSubServices(response.data);
       } catch (error) {
@@ -32,11 +31,9 @@ const ServiceDetail = () => {
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleAccordion = (index,event) => {
-    event.preventDefault();
+  const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
 
   return (
     <section className="px-6 md:px-12 lg:px-24 2xl:px-[20%] py-8 lg:py-16 w-full flex justify-center">
@@ -68,7 +65,7 @@ const ServiceDetail = () => {
                 className={`w-full h-full text-left text-xl font-medium p-4 ${
                   activeIndex === index ? "rounded-t-lg" : "rounded-lg"
                 } flex justify-between items-center`}
-                onClick={(event) => toggleAccordion(index, event)} // Pass event to the function
+                onClick={() => toggleAccordion(index)}
                 style={{
                   backgroundColor: activeIndex === index ? hoverColor : "white",
                   transition: "background-color 1s",
