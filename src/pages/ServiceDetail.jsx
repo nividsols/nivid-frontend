@@ -32,7 +32,8 @@ const ServiceDetail = () => {
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index,event) => {
+    event.preventDefault();
     setActiveIndex(activeIndex === index ? null : index);
   };
 
