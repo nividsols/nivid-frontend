@@ -68,7 +68,7 @@ const ServiceDetail = () => {
                 className={`w-full h-full text-left text-xl font-medium p-4 ${
                   activeIndex === index ? "rounded-t-lg" : "rounded-lg"
                 } flex justify-between items-center`}
-                onClick={() => toggleAccordion(index)}
+                onClick={(event) => toggleAccordion(index, event)} // Pass event to the function
                 style={{
                   backgroundColor: activeIndex === index ? hoverColor : "white",
                   transition: "background-color 1s",
