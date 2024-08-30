@@ -1,4 +1,4 @@
-import SVG from "../assets/BannerImage.jpeg";
+import SVG from "../assets/img.png";
 
 const Hero = () => {
   return (
