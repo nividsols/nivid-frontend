@@ -28,7 +28,6 @@ const CaseStudies = () => {
       state: { name: caseStudyId.name },
     });
   };
-
   return (
     <section
       className="px-6 md:px-12 lg:px-24 2xl:px-[13%] py-10 w-full"

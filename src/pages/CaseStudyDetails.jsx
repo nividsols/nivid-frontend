@@ -102,12 +102,15 @@ const CaseStudyDetails = () => {
     prevArrow: <PrevArrow />,
   };
 
+  const coverPicture = segments.filter(data => data.segment_no==0)
   return (
     <section className="bg-white px-6 md:px-12 lg:px-24 2xl:px-[20%] py-20">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-semibold mb-16 text-gray-800">{name}</h1>
         <Slider {...settings} className="mb-12 mt-2">
-          {segments.map((segment) => (
+          {segments
+          .filter(data => data.segment_no!==0)
+          .map((segment) => (
             <div key={segment.id}>
               <img
                 src={segment.image_url}
@@ -128,8 +131,8 @@ const CaseStudyDetails = () => {
         <div className="text-gray-600 mt-16">
           <div className="mb-8">
             <img
-              src={segments[0].image_url}
-              alt={segments[0].title}
+              src={coverPicture&&coverPicture[0].image_url}
+              alt={coverPicture.title}
               className="w-full h-[15rem] md:h-[22rem] rounded-lg"
             />
           </div>
