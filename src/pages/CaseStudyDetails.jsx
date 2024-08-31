@@ -128,15 +128,17 @@ const CaseStudyDetails = () => {
             </div>
           ))}
         </Slider>
-        <div className="text-gray-600 mt-16">
-          <div className="mb-8">
-            <img
-              src={coverPicture&&coverPicture[0].image_url}
-              alt={coverPicture.title}
-              className="w-full h-[15rem] md:h-[22rem] rounded-lg"
-            />
+        {coverPicture.length>0&&(
+          <div className="text-gray-600 mt-16">
+            <div className="mb-8">
+              <img
+                src={coverPicture&&coverPicture[0].image_url}
+                alt={coverPicture.title}
+                className="w-full h-[15rem] md:h-[22rem] rounded-lg"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
