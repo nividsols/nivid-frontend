@@ -14,7 +14,8 @@ const AboutUs = () => {
             <br />
             Who We Are
           </h1>
-          <p className="text-[#C4C4C4] text-base lg:text-2xl leading-8 lg:leading-10 mb-6 max-w-[36rem]">
+          {/* #C4C4C4 */}
+          <p className="text-[#888383] text-base lg:text-2xl leading-8 lg:leading-10 mb-6 max-w-[36rem] text-justify">
             NIVID Innovative Solutions is an Engineering Solutions & Service
             company. We provide cost-effective solutions & services in IoT &
             Digital Engineering, Data Analysis & Visualization, Manufacturing &

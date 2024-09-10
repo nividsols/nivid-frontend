@@ -85,11 +85,12 @@ const Services = () => {
       className="bg-[#F6F6F6] px-6 md:px-12 lg:px-24 xl:px-36 py-12"
       id="services"
     >
-      <div className="flex flex-col lg:flex-row justify-between items-center py-20">
-        <h1 className="text-5xl w-full lg:w-80 leading-relaxed font-semibold mb-8 lg:mb-0">
+      <div className="flex flex-col  justify-between items-center py-20">
+        <h1 className="text-5xl w-full  leading-relaxed font-semibold mb-8 lg:mb-0 text-center mb-4"> 
+          {/* //lg:w-80 lg:flex-row */}
           Our Excellent Services
         </h1>
-        <p className="text-[#C4C4C4] text-lg font-medium text-center lg:text-left">
+        <p className="text-[#888383] text-lg font-medium text-center lg:text-left">
           We provide end-to-end Conventional/Digital solutions & services for
           manufacturing facilities
         </p>

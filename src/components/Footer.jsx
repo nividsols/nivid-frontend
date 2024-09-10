@@ -82,8 +82,8 @@ const Footer = ({serviceData,caseStudyData}) => {
           </div>
 
           <div>
-            <h2 className="font-semibold">Company</h2>
-            <ul className="mt-4 space-y-2">
+            <h2 className="font-semibold">Contact</h2>
+            <ul className="mt-6 space-y-2">
               <li>
                 <HashLink
                   smooth
@@ -94,9 +94,6 @@ const Footer = ({serviceData,caseStudyData}) => {
                 </HashLink>
               </li>
             </ul>
-          </div>
-          <div>
-            <h2 className="font-semibold">More</h2>
             <ul className="mt-4 space-y-2">
               <li>
                 <a href="/contact-us" className="text-gray-600">
@@ -105,8 +102,23 @@ const Footer = ({serviceData,caseStudyData}) => {
               </li>
             </ul>
           </div>
+          <div>
+            <h2 className="font-semibold">Locations</h2>
+            Ima
+            <ul className="mt-6 space-y-2">
+              <li>
+                <p className="text-gray-600">
+                  Address <br />
+                  Address <br />
+                  Address <br />
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p className="md:ml-4  mt-12 text-gray-500"> © Copyright/Registered 2022-2023 Nivid Innovative Solutions</p>
+      {/* <p className="md:ml-4 mt-2 text-gray-500 cursor-pointer"> Privacy Policy</p> */}
     </footer>
   );
 };

@@ -54,10 +54,12 @@ const ContactUs = () => {
             </span>
           </div>
           <div className="flex items-center mb-4 mt-6">
-            <h2 className="text-2xl font-semibold">Nivid</h2>
+            <h2 className="text-2xl font-semibold">NIVID</h2>
           </div>
           <p className="text-gray-400 text-justify">
-          Have a question or feedback? Fill out the form, and we'll get back to you soon.
+          Have a question or feedback? <br />
+          Fill out the form, and we'll get back to you soon. <br />
+          We take pride in being responsive and we promise to follow up within one business days.
           </p>
         </div>
         <div className="p-6 max-w-md w-full my-8">

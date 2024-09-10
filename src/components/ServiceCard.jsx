@@ -10,7 +10,7 @@ const ServiceCard = ({ img, title, description, onClick }) => {
         <img src={img} alt={title} className="object-fit rounded-lg w-full h-64 md:h-80" />
       </div>
       <div className="p-3 text-wrap overflow-auto">
-        <h1 className="text-lg  font-semibold mb-4  text-gray-800">{title}</h1>
+        <h1 className="text-lg  font-semibold mb-4  text-gray-800 text-center">{title}</h1>
         {/* <p className="text-gray-600 leading-relaxed whitespace-pre-line">{description}</p> */}
       </div>
     </div>
