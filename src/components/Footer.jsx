@@ -20,7 +20,7 @@ const Footer = ({serviceData,caseStudyData}) => {
     <footer className="bg-gray-100 p-8 py-20 w-full">
       <div className="max-w-screen-xl mx-auto md:flex-row gap-16 flex justify-between flex-col">
         <div className="w-full md:w-2/5">
-          <h1 className="text-xl font-semibold">Nivid Innovative Solutions</h1>
+          <h1 className="text-xl font-semibold">NIVID Innovative Solutions Ltd</h1>
           <div className="text-gray-600 mt-2">
             is a Engineering Solutions & Service company.
             <br />

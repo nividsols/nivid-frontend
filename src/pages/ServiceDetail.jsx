@@ -8,7 +8,7 @@ const ServiceDetail = () => {
   const [subServices, setSubServices] = useState([]);
   const [hoverColor, setHoverColor] = useState("");
 
-  const colors = ["#FAFFAF", "#FFB4C2", "#E6B9A6", "#E90074", "#4A249D"];
+  const colors = ["#D2E0FB", "#FEF9D9", "#FFC6C6", "#F0A8D0", "#E9FF97"];
 
   useEffect(() => {
     const getSubServices = async () => {
@@ -92,7 +92,7 @@ const ServiceDetail = () => {
               </button>
               {activeIndex === index && (
                 <div className="p-4 rounded-b-lg">
-                  <pre className="whitespace-pre-wrap text-gray-700">
+                  <pre className="whitespace-pre-wrap text-gray-700 font-inter">
                     {subService.details}
                   </pre>
                 </div>
