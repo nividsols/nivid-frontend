@@ -22,16 +22,17 @@ const Footer = ({serviceData,caseStudyData}) => {
         <div className="w-full md:w-2/5">
           <h1 className="text-xl font-semibold">NIVID Innovative Solutions Ltd</h1>
           <div className="text-gray-600 mt-2">
-            is a Engineering Solutions & Service company.
-            <br />
+            {/* is a Engineering Solutions & Service company.
+            <br /> */}
             <p className="my-1 text-justify">
-              We Provide cost effective solutions & services in IoT & Digital
+            We provide cost-effective engineering solutions and services in IoT, Digital Engineering, Data Analysis, Manufacturing Support, and 3D Metrology, specializing in industries like Aviation, Automobile, Supply Chain, MedTech, and EduTech.
+              {/* We Provide cost effective solutions & services in IoT & Digital
               Engineering, Data Analysis & Visualisation, Manufacturing & Design
               Support and 3D Metrology & Reverse Engineering to global
-              industrial OEM's & manufactures.
+              industrial OEM's & manufactures. */}
             </p>
-            Our domain expertise are Aviation, Automobile, Supply Chain, Medi
-            Tech & Edu Tech.
+            {/* Our domain expertise are Aviation, Automobile, Supply Chain, Medi
+            Tech & Edu Tech. */}
           </div>
           <div className="flex space-x-4 mt-4">
             <a href="#" className="text-blue-500">
@@ -58,7 +59,7 @@ const Footer = ({serviceData,caseStudyData}) => {
               {serviceData&&serviceData.map((service) => (
                 <li
                   key={service.id}
-                  className="hover:bg-gray-200 cursor-pointer p-2"
+                  className="hover:bg-gray-200  hover:underline cursor-pointer p-2"
                   onClick={() => handleCardClick(service)}
                 >
                   {service.name}
@@ -72,7 +73,7 @@ const Footer = ({serviceData,caseStudyData}) => {
             {caseStudyData&&caseStudyData.map((casestudy) => (
               <li
                 key={casestudy.id}
-                className=" hover:bg-gray-200 cursor-pointer p-2"
+                className=" hover:bg-gray-200 hover:underline cursor-pointer p-2"
                 onClick={() => handleCaseStudyCardClick(casestudy)}
               >
                 {casestudy.name}
@@ -104,7 +105,6 @@ const Footer = ({serviceData,caseStudyData}) => {
           </div>
           <div>
             <h2 className="font-semibold">Locations</h2>
-            Ima
             <ul className="mt-6 space-y-2">
               <li>
                 <p className="text-gray-600">
