@@ -44,7 +44,7 @@ const Footer = ({serviceData,caseStudyData}) => {
         <div className="flex flex-col md:flex md:flex-row gap-8 md:w-3/5">
           <div>
             <h2 className="font-bold ">Services</h2>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-gray-400">
               {serviceData&&serviceData.map((service) => (
                 <li
                   key={service.id}
@@ -58,7 +58,7 @@ const Footer = ({serviceData,caseStudyData}) => {
           </div>
           <div>
             <h2 className="font-semibold">Case Studies</h2>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-gray-400">
             {caseStudyData&&caseStudyData.map((casestudy) => (
               <li
                 key={casestudy.id}
@@ -72,8 +72,8 @@ const Footer = ({serviceData,caseStudyData}) => {
           </div>
 
           <div>
-            <h2 className="font-semibold">Contact</h2>
-            <ul className="mt-6 space-y-2 text-white">
+            <h2 className="font-bold">Contact</h2>
+            <ul className="mt-6 space-y-2 text-gray-400">
               <li>
                 <HashLink
                   smooth
@@ -84,7 +84,7 @@ const Footer = ({serviceData,caseStudyData}) => {
                 </HashLink>
               </li>
             </ul>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-gray-400">
               <li className="hover:text-[#0775B4]">
                 <a href="/contact-us">
                   Contact Us
@@ -93,10 +93,10 @@ const Footer = ({serviceData,caseStudyData}) => {
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold">Locations</h2>
+            <h2 className="font-bold">Locations</h2>
             <ul className="mt-6 space-y-2">
               <li>
-                <p className=" text-white">
+                <p className=" text-gray-400">
                   Address <br />
                   Address <br />
                   Address <br />
