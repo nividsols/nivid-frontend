@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from 'emailjs-com';
+import Contact from "../assets/contact.jpg";
 const serviceId = import.meta.env.VITE_API_SERVICE_ID;
 const templateId = import.meta.env.VITE_API_TEMPLATE_ID;
 const userId = import.meta.env.VITE_API_USER_ID;
@@ -48,10 +49,11 @@ const ContactUs = () => {
     <div className="w-full flex justify-center my-16">
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-16 bg-gradient-to-l from-[#60BBEE] via-[#0775B4] to-[#0A72AD] p-8 min-w-[80%] shadow-lg ">
         <div className="bg-white p-6 pb-8 shadow-lg max-w-xs mb-6 md:mb-0 md:mr-6 flex flex-col items-center mt-8">
-          <div className="shadow-lg bg-white text-[#0775B4] rounded-full h-20 w-20 flex justify-center items-center mr-2">
-            <span className="text-3xl w-8">
+          <div className=" text-[#0775B4] rounded-full h-20 w-20 flex justify-center items-center mr-2">
+            {/* <span className="text-3xl w-8">
               <svg fill="#0775B4" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 349.078 349.078" xmlSpace="preserve" stroke="#0775B4"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643 c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455 c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44 C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186 c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023 c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605 v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455 c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path> </g> </g></svg>
-            </span>
+            </span> */}
+            <img src={Contact} alt=""  className="w-full"/>
           </div>
           <div className="flex items-center mb-4 mt-6">
             <h2 className="text-2xl font-semibold">NIVID</h2>
@@ -102,7 +104,7 @@ const ContactUs = () => {
                 type="submit"
                 className="px-8 p-2 bg-[#0A72AD] text-white rounded mt-1 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
-                Send →
+                Get in touch →
               </button>
             </div>
           </form>

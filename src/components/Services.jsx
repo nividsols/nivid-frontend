@@ -90,7 +90,7 @@ const Services = () => {
           {/* //lg:w-80 lg:flex-row */}
           Our Excellent Services
         </h1>
-        <p className="text-[#888383] text-lg font-medium text-center lg:text-left">
+        <p className="text-[#888383] text-lg font-medium text-center lg:text-left hover:text-[#0775B4]">
           We provide end-to-end Conventional/Digital solutions & services for
           manufacturing facilities
         </p>

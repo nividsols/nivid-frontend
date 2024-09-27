@@ -30,7 +30,7 @@ const CaseStudies = () => {
   };
   return (
     <section
-      className="px-6 md:px-12 lg:px-24 2xl:px-[13%] py-10 w-full"
+      className="px-6 md:px-12 lg:px-24 2xl:px-[13%] py-10 w-full bg-gray-100"
       id="case-studies"
     >
       <div className="flex flex-col lg:flex-row justify-between items-center md:pb-12">

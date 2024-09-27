@@ -128,7 +128,7 @@ const Navbar = ({ serviceData, caseStudyData }) => {
           <HashLink
             smooth
             to="/contact-us"
-            className="text-[#C4C4C4] hover:text-white cursor-pointer"
+            className="text-white hover:text-[#0775B4] hover:bg-white cursor-pointer border-2 border-gray-100 rounded-xl p-2"
           >
             Contact Us
           </HashLink>
