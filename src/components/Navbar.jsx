@@ -183,17 +183,7 @@ const Navbar = ({ serviceData, caseStudyData }) => {
               Contact Us
             </HashLink>
           </li>
-          {/* Login and Register buttons */}
-          <li className="hover:text-gray-400 cursor-pointer">
-            <HashLink smooth to="/login" onClick={toggleMenu}>
-              Login
-            </HashLink>
-          </li>
-          <li className="hover:text-gray-400 cursor-pointer">
-            <HashLink smooth to="/register" onClick={toggleMenu}>
-              Register
-            </HashLink>
-          </li>
+
         </ul>
       )}
     </nav>
