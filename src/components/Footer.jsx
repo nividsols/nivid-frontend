@@ -201,7 +201,7 @@ const Footer = ({ serviceData, caseStudyData }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:flex w-full justify-between md:px-20">
+      <div className="flex flex-col-reverse md:flex md:flex-row w-full md:justify-between md:px-20">
         <p className="md:ml-4  mt-12 text-gray-500">
           {" "}
           © Copyright 2022-2023 NIVID Innovative Solutions Ltd
